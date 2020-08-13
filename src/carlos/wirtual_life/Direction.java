@@ -99,21 +99,10 @@ public class Direction {
 
     private static DirectionBase getDirection(int n){
         DirectionBase result = null ;
-        switch (n){
-            case 1:
-               result = DirectionBase.TOP;
-               break;
-            case 2:
-                result = DirectionBase.LEFT;
-                break;
-            case 3:
-                result = DirectionBase.RIGHT;
-                break;
-            case 4:
-                result = DirectionBase.BOTTOM;
-                break;
-            default:
-                break;
+        for (DirectionBase direction: DirectionBase.values()) {
+            if (n == direction.ordinal()+1){
+               result = direction ;
+            }
         }
 
         return result ;

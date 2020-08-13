@@ -42,7 +42,7 @@ public class FileSaves {
         while(scanner.hasNextInt()){
             cords[index++] = scanner.nextInt()  ;
         }
-        System.out.println(cords[0]+" "+cords[1]);
+//        System.out.println(cords[0]+" "+cords[1]);
         if(cords[0] != -1 && cords[1] != -1) {
             world = new World(cords[0], cords[1]);
             while(scanner.hasNextLine()){
@@ -57,7 +57,7 @@ public class FileSaves {
                    organism.setPower(power);
                    world.addNewOrganism(organism);
 
-                   System.out.println(species+" "+x+" "+y);
+//                   System.out.println(species+" "+x+" "+y);
                }
 
 

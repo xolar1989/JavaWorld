@@ -24,9 +24,6 @@ public class Main {
            world.start();
        }
 
-
-
-//        System.out.println(System.getProperty("user.dir"));
         World finalWorld = world;
         EventQueue.invokeLater(() -> {
             Window window = new Window(finalWorld) ;

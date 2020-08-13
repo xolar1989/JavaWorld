@@ -1,10 +1,10 @@
 package carlos.wirtual_life;
 
 public enum ListOfOrganism {
-    GRASS("Grass") ,
+    GRASS("Grass" ) ,
     MILT("Milt") ,
     GUARANA("Guarana"),
-    WOLFBERRY("WolfBerry"),
+    WOLFBERRY("WolfBerry" ),
     SOSNOWSKYHOGWEED("SosnowskyHogWeed"),
     WOLF("Wolf"),
     SHEEP("Sheep"),
@@ -43,41 +43,12 @@ public enum ListOfOrganism {
 
     public static ListOfOrganism getSpecies(int los){
         ListOfOrganism item = null ;
-        switch (los){
-            case 1:
-                item=GRASS;
-                break;
-            case 2:
-                item=MILT;
-                break;
-            case 3:
-                item=GUARANA;
-                break;
-            case 4:
-                item=WOLFBERRY;
-                break;
-            case 5:
-                item=SOSNOWSKYHOGWEED;
-                break;
-            case 6:
-                item=WOLF;
-                break;
-            case 7:
-                item=SHEEP;
-                break;
-            case 8:
-                item=FOX;
-                break;
-            case 9:
-                item=TURTLE;
-                break;
-            case 10:
-                item=ANTYLOPE;
-                break;
-            default:
-                break;
+        for (ListOfOrganism species: ListOfOrganism.values()) {
+            if (los == species.ordinal()+1){
+                item = species ;
+            }
         }
-
+        
         return item ;
     }
 

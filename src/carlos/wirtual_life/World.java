@@ -18,7 +18,8 @@ public class World {
     public Organism hero ;
     public List<Organism> organisms = new LinkedList<>() ;
     public Commentator commentator ;
-    private int width , height ;
+    private final int width;
+    private final int height ;
     private boolean gameover ;
     private int turn ;
     final double AmountOfPopulation ;
