@@ -96,23 +96,14 @@ public class Window extends JFrame implements ActionListener , KeyListener {
 
         this.g = (Graphics2D) this.board.getGraphics() ;
 
-
-
-
-
-
-
-
-
-
     }
 
     private void endProgram(){
         legendWindow.dispose();
         dispose();
+        System.exit(0);
+
     }
-
-
     public void printBoard(){
         g.setColor(Color.RED);
         g.fillRect(0,0,world.getWidth()*FieldSize+50 ,world.getHeight()*FieldSize +50);

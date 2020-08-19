@@ -32,9 +32,6 @@ public class LegendWindow extends Frame  {
 
             add(lines[i]) ;
 
-
-
-
         }
 
         setLayout(new GridLayout(ListOfOrganism.Size()+1,1));

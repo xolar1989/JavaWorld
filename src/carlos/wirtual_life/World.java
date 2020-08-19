@@ -9,6 +9,7 @@ import carlos.wirtual_life.organism.plants.*;
 
 import javax.swing.*;
 import java.io.FileNotFoundException;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -191,6 +192,10 @@ public class World {
             }
             if(!added) organisms.add(organism) ;
         }
+    }
+
+    public boolean containHuman(){
+        return hero != null ;
     }
 
     public Organism generateOrganism(ListOfOrganism Type , Field place){

@@ -21,7 +21,7 @@ public final class Turtle extends Animal {
     }
 
     @Override
-    public boolean fightOff(Organism attacker) { return attacker.getPower() < 5; }
+    public boolean fightOff(Organism attacker) { return attacker.getPower() <= 5; }
 
     @Override
     public boolean isTheSameSpecies(Organism organism) { return organism instanceof Turtle; }

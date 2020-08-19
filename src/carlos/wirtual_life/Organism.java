@@ -6,6 +6,7 @@ import carlos.wirtual_life.organism.Plant;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Objects;
 
 public abstract class Organism {
 
@@ -15,7 +16,7 @@ public abstract class Organism {
     public World world ;
     public boolean dead  ;
     public char character ;
-    private CharacterPhoto picture ;
+    private final CharacterPhoto picture ;
 
 
     public Organism(World world , Field place , int power , int initiative){
@@ -38,8 +39,8 @@ public abstract class Organism {
     public boolean fightOff(Organism attacker){ return false ; }
 
 
-    public CharacterPhoto character(){ return picture ;}
 
+    public CharacterPhoto character(){ return picture ;}
 
 
     public void leaveCurrentField(){
@@ -152,8 +153,5 @@ public abstract class Organism {
     }
 
     private boolean isAnimal(){ return this instanceof Animal ;  }
-
-
-
 
 }
