@@ -2,7 +2,7 @@
 Micro World build in java(Swing)
 
 
-//Instruction
+📚Instruction
 
 "W" go up ; 
 "S" go down ; 
