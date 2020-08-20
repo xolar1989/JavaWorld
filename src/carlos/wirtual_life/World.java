@@ -97,9 +97,6 @@ public class World {
             }
 
             nextTurn();
-            organisms.forEach(organism -> System.out.println(organism.Species()+" "+organism.place.x+" "+organism.place.y+" "
-                    +organism.getPower()));
-
             return true ;
         }
         else {
