@@ -97,6 +97,9 @@ public class World {
             }
 
             nextTurn();
+            organisms.forEach(organism -> System.out.println(organism.Species()+" "+organism.place.x+" "+organism.place.y+" "
+                    +organism.getPower()));
+
             return true ;
         }
         else {
@@ -107,32 +110,6 @@ public class World {
 
 
     }
-
-    public void drawWorld(){
-
-        for (int i = 0; i <height ; ++i) {
-
-
-
-
-//
-//            for (int j = 0; j <width ; ++j) {
-//
-//                if(this.Map[i][j].getOrganism() == null){
-//                    System.out.print("_ ");
-//                }
-//            else{
-//                    System.out.print(Map[i][j].getOrganism().drawing()+" ");
-//                }
-//            }
-//
-//
-//            System.out.println();
-        }
-
-    }
-
-
 
     public boolean isGameover() {
         return gameover;

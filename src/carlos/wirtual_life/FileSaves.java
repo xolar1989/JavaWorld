@@ -1,11 +1,19 @@
 package carlos.wirtual_life;
 
 import java.io.*;
+import java.nio.file.FileAlreadyExistsException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class FileSaves {
-    private static final String Address = "saves.txt";
+    private static final String ADDRESS = "saves.txt";
     World world ;
 
     public FileSaves(World world){
@@ -13,25 +21,17 @@ public class FileSaves {
     }
 
     public void save() throws FileNotFoundException {
-        PrintWriter file = new PrintWriter(Address) ;
+        PrintWriter file = new PrintWriter(ADDRESS) ;
         file.println(world.getWidth()+" "+world.getHeight());
-
-        for (Organism organism : world.organisms) {
-            if(organism.isAlive()){
-                String species = organism.Species() ;
-                String positionX = Integer.toString(organism.place.x) ;
-                String positionY = Integer.toString(organism.place.y) ;
-                String power = Integer.toString(organism.getPower()) ;
-                file.println(species+" "+positionX+" "+positionY+" "+power);
-            }
-
-        }
+        world.organisms.stream().filter(Organism::isAlive).forEach(organism ->{
+            file.println(organism.Species()+" "+organism.place.x+" "+organism.place.y+" "
+                    +organism.getPower());
+        });
         file.close();
-
     }
 
     public static World load() throws FileNotFoundException {
-        File file = new File(Address) ;
+        File file = new File(ADDRESS) ;
         if(!file.exists()){
             try {
                 file.createNewFile() ;
@@ -40,7 +40,7 @@ public class FileSaves {
                 e.printStackTrace();
             }
         }
-        Scanner scanner = new Scanner(new BufferedReader(new FileReader(file))) ;
+        Scanner scanner = new Scanner(file) ;
         return loadFile(scanner);
     }
 
@@ -70,8 +70,10 @@ public class FileSaves {
                 }
             }
         }
+
         return world!=null && world.containHuman() ? world : null ;
     }
+
 
 
 }
